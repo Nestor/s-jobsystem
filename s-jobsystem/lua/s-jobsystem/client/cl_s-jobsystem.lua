@@ -16,18 +16,6 @@ for i=10,100 do
 })
 end 
 
-local function formatNumber(n)
-    if not n then return "" end
-    if n >= 1e14 then return tostring(n) end
-    n = tostring(n)
-    local sep = sep or ","
-    local dp = string.find(n, "%.") or #n+1
-    for i=dp-4, 1, -3 do
-        n = n:sub(1, i) .. sep .. n:sub(i+1)
-    end
-    return n
-end
-
 net.Receive("S-JobSystem:Message",function()
 	local Message = net.ReadString()
 	chat.AddText(Color(230, 92, 78), "[S-JobSystem] ", color_white, Message)
@@ -196,7 +184,7 @@ net.Receive("S-JobSystem:OpenMenu",function()
 				else
 					draw.SimpleText( string.sub( string.upper(v.name), 1, 18 ).."...", "SlownLSFont20",80, 8, col, TEXT_ALIGN_LEFT)
 				end			
-				draw.SimpleText( "Salaire: "..formatNumber(v.salary).."$","SlownLSFont20",80, 35, col, TEXT_ALIGN_LEFT)
+				draw.SimpleText( "Salaire: "..DarkRP.formatMoney(v.salary).."$","SlownLSFont20",80, 35, col, TEXT_ALIGN_LEFT)
 
 				draw.RoundedBox(0,0,h-1,w,1,Color(0,0,0,80))
 			end
