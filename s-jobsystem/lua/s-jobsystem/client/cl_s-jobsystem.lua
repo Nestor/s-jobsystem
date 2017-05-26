@@ -8,13 +8,12 @@
 
 AddCSLuaFile()
 
-for i=10,100 do 
-	surface.CreateFont("SlownLSFont"..i, {
-	font = "Open Sans", 
-	size = i, 
-	weight = 2000
+
+surface.CreateFont("SlownLSFont20", {
+  font = "Open Sans", 
+  size = 20, 
+  weight = 2000
 })
-end 
 
 net.Receive("S-JobSystem:Message",function()
 	local Message = net.ReadString()
