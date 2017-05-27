@@ -15,6 +15,12 @@ surface.CreateFont("SlownLSFont20", {
   weight = 2000
 })
 
+surface.CreateFont("SlownLSFont30", {
+  font = "Open Sans", 
+  size = 20, 
+  weight = 2000
+})
+
 net.Receive("S-JobSystem:Message",function()
 	local Message = net.ReadString()
 	chat.AddText(Color(230, 92, 78), "[S-JobSystem] ", color_white, Message)
