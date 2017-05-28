@@ -6,10 +6,9 @@
 	Steam 	 	= https://steamcommunity.com/id/slownls/
 -----------------------------------------------------------------*/
 
+SJobSystem = {}
+
 if( SERVER ) then		
-	// Config
-	include( "s-jobsystem/s-jobsystem-config.lua" )
-	AddCSLuaFile( "s-jobsystem/s-jobsystem-config.lua" )
 	// Server
 	include( "s-jobsystem/server/sv_s-jobsystem.lua" )
 	include( "s-jobsystem/server/sv_s-jobsystems-functions.lua" )
@@ -18,8 +17,6 @@ if( SERVER ) then
 end
 
 if( CLIENT ) then
-	// Config
-	include( "s-jobsystem/s-jobsystem-config.lua" )
 	// Client
 	include( "s-jobsystem/client/cl_s-jobsystem.lua" )
 end
